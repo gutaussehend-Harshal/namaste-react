@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 // const heading = document.createElement("h1");
 // heading.innerHTML = "Hello World from JavaScript!";
 
@@ -6,7 +9,7 @@
 
 const parent = React.createElement("div", { id: "parent" }, [
   React.createElement("div", { id: "child1" }, [
-    React.createElement("h1", {}, "I am an h1 tag"),
+    React.createElement("h1", {}, "This is Namste React 🚀"),
     React.createElement("h2", {}, "I am an h2 tag"),
   ]),
   React.createElement("div", { id: "child2" }, [
