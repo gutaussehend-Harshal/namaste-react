@@ -1,26 +1,21 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-// const heading = document.createElement("h1");
-// heading.innerHTML = "Hello World from JavaScript!";
+// JSX => Babel transpiles it to React.createElement => ReactElement-JS object =>HTMLElement(render)
 
-// const root = document.getElementById("root");
-// root.appendChild(heading);
+const heading = React.createElement(
+  "h1",
+  { id: "heading" },
+  "Namaste React 🚀"
+);
 
-const parent = React.createElement("div", { id: "parent" }, [
-  React.createElement("div", { id: "child1" }, [
-    React.createElement("h1", {}, "This is Namste React 🚀"),
-    React.createElement("h2", {}, "I am an h2 tag"),
-  ]),
-  React.createElement("div", { id: "child2" }, [
-    React.createElement("h1", {}, "I am an h1 tag"),
-    React.createElement("h2", {}, "I am an h2 tag"),
-  ]),
-]);
+console.log(heading);
 
-// const heading = React.createElement("h1", { id: "heading" }, "Namaste React");
-
-console.log(parent); // object
+// JSX - HTML-like or XML-like syntax
+// JSX (transpiled before it reaches the JS engine) - PARCEL - BABEL
+const jsxHeading = <h1 className="head">Namaste React Using JSX 🚀</h1>;
+console.log(jsxHeading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+
+root.render(jsxHeading);
