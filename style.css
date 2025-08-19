@@ -23,7 +23,6 @@
 .res-card {
   margin: 5px;
   width: 200px;
-  height: 300px;
   border: 1px solid transparent; /* keep space reserved */
   transition: border-color 0.2s ease; /* smooth effect */
 }
@@ -39,6 +38,8 @@
 
 .res-logo {
   width: 100%;
+  height: 40%;
+  object-fit: fill;
 }
 
 .res-container {
