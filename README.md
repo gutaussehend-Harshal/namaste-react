@@ -36,3 +36,8 @@
 
 - useState() - Superpowerful state variable in react
 - useEffect()
+
+# Two types routing in web apps
+
+- Client Side Routing
+- Server Side Routing
