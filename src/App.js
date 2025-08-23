@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import Contact from "./components/Contact";
 import About from "./components/About";
 import Error from "./components/Error";
+import RestaurantMenu from "./components/RestaurantMenu";
 
 // not using keys (not acceptable) <<<<<< index as key <<<<<<< unique id (best practice)
 
@@ -34,6 +35,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/restaurants/:resId",
+        element: <RestaurantMenu />,
       },
     ],
     errorElement: <Error />,

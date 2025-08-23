@@ -3,6 +3,7 @@ import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { SWIGGY_URL } from "../utils/constants";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   // Local State Variable
@@ -15,7 +16,7 @@ const Body = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [SWIGGY_URL]);
 
   const fetchData = async () => {
     const data = await fetch(SWIGGY_URL);
@@ -80,7 +81,13 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            to={"/restaurants/" + restaurant.info.id}
+            key={restaurant.info.id}
+            className="no-underline"
+          >
+            <RestaurantCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </div>
