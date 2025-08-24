@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { LOGO_URL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
+  const onlineStatus = useOnlineStatus();
+
   // useState varibale should be write within component body and you can't write it within condition or loop
   const [buttonName, setButtonName] = useState("Login");
 
@@ -21,6 +24,7 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul>
+          <li>Online status : {onlineStatus ? "✅" : "🔴"}</li>
           <li>
             <Link to="/" className="no-underline">
               Home
@@ -34,6 +38,11 @@ const Header = () => {
           <li>
             <Link to="/contact" className="no-underline">
               Contact Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/grocery" className="no-underline">
+              Grocery
             </Link>
           </li>
           <li>Cart</li>
