@@ -78,3 +78,15 @@
   text-decoration: none;
   color: black;
 }
+
+.user-card {
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px; /* keep it square */
+  border-radius: 50%; /* makes it round */
+  object-fit: cover; /* keeps image aspect ratio */
+}
