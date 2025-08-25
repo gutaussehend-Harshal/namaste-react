@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withPromotedLabel } from "./RestaurantCard";
 import resList from "../utils/mockData";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
@@ -13,7 +13,11 @@ const Body = () => {
 
   const [searchText, setSearchText] = useState("");
 
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
   // Whenever state variables update, react triggers reconciliation cycle(re-renders the component).
+
+  console.log(listOfRestaurant);
 
   useEffect(() => {
     fetchData();
@@ -93,9 +97,12 @@ const Body = () => {
           <Link
             to={"/restaurants/" + restaurant.info.id}
             key={restaurant.info.id}
-            className="no-underline"
           >
-            <RestaurantCard resData={restaurant} />
+            {restaurant.info.RestaurantCardPromoted === null ? (
+              <RestaurantCardPromoted resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
